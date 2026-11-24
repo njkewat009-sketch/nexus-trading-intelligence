@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b13">
+  <meta name="description" content="NEXUS Trading Intelligence">
+  <title>NEXUS Trading Intelligence</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/nexus-mark.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#">
+        <span class="brand-logo">N</span>
+        <span><b>NEXUS</b><small>TRADING INTELLIGENCE</small></span>
+      </a>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav id="navigation">
+        <button class="nav-item active" data-page="overview">◫ Overview</button>
+        <button class="nav-item" data-page="scanner">⌕ Market Scanner</button>
+        <button class="nav-item" data-page="research">✧ AI Research</button>
+        <button class="nav-item" data-page="technical">⌁ Chart Analysis</button>
+        <button class="nav-item" data-page="risk">⬡ Risk Control</button>
+        <button class="nav-item" data-page="strategy">▦ Strategy Lab</button>
+        <button class="nav-item" data-page="news">▤ News Intelligence</button>
+        <button class="nav-item" data-page="journal">◷ Trade Journal</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <span class="dot"></span> LOCAL DEMO MODE
+        <small>No live market connection</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="menuButton" class="menu-button">☰</button>
+        <div class="breadcrumb">NEXUS / <b id="currentSection">Overview</b></div>
+        <span class="paper-label">PAPER WORKSPACE</span>
+      </header>
+
+      <section class="content">
+        <div class="heading">
+          <div>
+            <div class="eyebrow">INTELLIGENCE TERMINAL · V1.0</div>
+            <h1 id="pageTitle">Trading Intelligence</h1>
+            <p id="pageSubtitle">Your personal market research workspace.</p>
+          </div>
+          <span class="market-label">INDIA · NSE / BSE</span>
+        </div>
+
+        <div class="notice">
+          <b>DEMO ENVIRONMENT</b>
+          <span>Interface preview only. No live prices or trading signals.</span>
+        </div>
+
+        <div id="pageContent">
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Intelligence modules</span>
+              <strong>15</strong>
+              <small>Core departments</small>
+            </article>
+            <article class="stat-card">
+              <span>Market connection</span>
+              <strong>OFF</strong>
+              <small>Data provider not connected</small>
+            </article>
+            <article class="stat-card">
+              <span>Execution mode</span>
+              <strong>PAPER</strong>
+              <small>No live orders</small>
+            </article>
+            <article class="stat-card">
+              <span>Risk control</span>
+              <strong>ON</strong>
+              <small>Research discipline</small>
+            </article>
+          </div>
+
+          <div class="section-heading">
+            <div class="eyebrow">COMMAND CENTRE</div>
+            <h2>Intelligence Modules</h2>
+          </div>
+
+          <div class="module-grid" id="moduleGrid"></div>
+
+          <div class="bottom-grid">
+            <article class="panel">
+              <div class="eyebrow">QUICK RESEARCH</div>
+              <h2>Start an analysis</h2>
+
+              <form id="researchForm">
+                <label for="symbol">Stock symbol</label>
+                <input id="symbol" placeholder="e.g. RELIANCE" required>
+
+                <label for="style">Trading style</label>
+                <select id="style">
+                  <option>Intraday</option>
+                  <option>Swing</option>
+                  <option>Long-term</option>
+                </select>
+
+                <label for="approach">Research approach</label>
+                <select id="approach">
+                  <option>Technical + Fundamental</option>
+                  <option>Technical</option>
+                  <option>Fundamental</option>
+                </select>
+
+                <button class="primary-button" type="submit">
+                  Create Research Brief →
+                </button>
+              </form>
+
+              <div id="researchOutput" class="output">
+                Your research request will appear here.
+              </div>
+            </article>
+
+            <article class="panel">
+              <div class="eyebrow">SYSTEM STATUS</div>
+              <h2>Platform Readiness</h2>
+              <div class="status-list">
+                <div>Dashboard <b class="good">READY</b></div>
+                <div>Navigation <b class="good">READY</b></div>
+                <div>PWA foundation <b class="good">READY</b></div>
+                <div>AI connection <b class="pending">PENDING</b></div>
+                <div>Market data <b class="pending">PENDING</b></div>
+                <div>Backtesting <b class="pending">PLANNED</b></div>
+              </div>
+              <p class="fine-print">
+                AI and market data will be connected in later development phases.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        NEXUS TRADING INTELLIGENCE
+        <span>RESEARCH · SIMULATION · RISK</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js");
+      });
+    }
+  </script>
+</body>
+</html>
+  
