@@ -1,0 +1,20 @@
+
+{
+  "name": "NEXUS Trading Intelligence",
+  "short_name": "NEXUS TI",
+  "description": "Personal trading research and paper trading workspace",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090b13",
+  "theme_color": "#090b13",
+  "icons": [
+    {
+      "src": "./assets/nexus-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
