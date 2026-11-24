@@ -28,7 +28,19 @@ const pages = {
   journal: ["Trade Journal","Paper trading records and performance."]
 };
 
-const grid = document.getElementById("moduleGrid");
+function renderModules() {
+  const grid = document.getElementById("moduleGrid");
+
+  if (!grid) return;
+
+  grid.innerHTML = modules.map((m,i) => `
+    <button class="module-card" data-page="${m[3]}">
+      <div class="module-icon">${m[2]}</div>
+      <b>${String(i+1).padStart(2,"0")} · ${m[0]}</b>
+      <small>${m[1]}</small>
+    </button>
+  `).join("");
+}
 
 function renderModules() {
   grid.innerHTML = modules.map((m,i) => `
